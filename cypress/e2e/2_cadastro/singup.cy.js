@@ -9,6 +9,11 @@ describe('Testes de Cadastro Usuario - Automação Pratica', () => {
 
 
     it('1. Deve validar o preenchimento do e-mail', () => {
+        /*
+         Dado que o usuário deseja se cadastrar
+         Quando ele clica no botão para envio do cadastro sem preencher o e-mail
+         Então a página deve retornar critica quanto ao não preenchimento
+        */
         cy.get('#SubmitCreate').should('be.visible').click();
         cy.get('#create_account_error').should('be.visible')
             .within(() => {
@@ -17,6 +22,11 @@ describe('Testes de Cadastro Usuario - Automação Pratica', () => {
     })
 
     it('2. Deve verificar se o e-mail é valido', () => {
+        /*
+         Dado que o usuário deseja se cadastrar
+         Quando o usuário preencher o formulário com um e-mail em formato invalido
+         Então a página deverá retronar critica do formato do e-mail
+        */
         cy.get('#email_create').type('email.com.br').pressTab();
         cy.get('.form-group').should('have.class', 'form-error');
         cy.get('#email_create').type('email@email.com').pressTab();
@@ -24,6 +34,11 @@ describe('Testes de Cadastro Usuario - Automação Pratica', () => {
     })
 
     it('3. Deve verificar se o e-mail ja foi cadastrado', () => {
+        /*
+         Dado que o usuário esta operando o formulário inicial de cadastro
+         Quando o usuário informar um e-mail já cadastro
+         Então a página deve retornar critíca relacionada
+        */
         cy.get('#email_create').type('praticas@praticas.com.br');
         cy.get('#SubmitCreate').click();
         cy.get('#create_account_error').should('be.visible')
@@ -33,6 +48,10 @@ describe('Testes de Cadastro Usuario - Automação Pratica', () => {
     })
 
     it('4. Usuario deve ser redirecionado para tela de dados da Conta', () => {
+        /* Dado que o usuário deseja se cadastrar
+           Quando o usuário inserir dados validos no formulario inicial
+           Então a página deve redireciona-lo para a próxima etapa
+        */
         cy.get('#email_create').type(faker.internet.email());
         cy.get('#SubmitCreate').click();
         cy.url().should('eq', 'http://www.automationpractice.pl/index.php?controller=authentication&back=my-account%2F#account-creation')
