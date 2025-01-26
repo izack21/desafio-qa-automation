@@ -59,6 +59,10 @@ describe('Testes de Cadastro Usuario - Automação Pratica', () => {
     })
 
     it('5. O forumário deve preencher automaticamente o e-mail', () => {
+        /* Dado que no formulário inicial o usuário já preencheu email
+           Quando seguir para a próxima etapa
+           Então a página deverá exibir o campo e-mail já preenchido
+        */
         const emailcadastro = faker.internet.email();
         cy.get('#email_create').type(emailcadastro);
         cy.get('#SubmitCreate').click();
@@ -67,7 +71,10 @@ describe('Testes de Cadastro Usuario - Automação Pratica', () => {
     })
 
     it('6. Validar funcionamento Campos obrigatorios', () => {
-
+        /* Dado que o usuário esta na segunda etapa do cadastro
+           Quando não preencher algum campo obrigatório
+           Então a página deverá exibir validações visuais
+        */
         const emailcadastro = faker.internet.email();
         cy.get('#email_create').type(emailcadastro);
         cy.get('#SubmitCreate').click();
@@ -84,6 +91,10 @@ describe('Testes de Cadastro Usuario - Automação Pratica', () => {
     })
 
     it('7. Validar funcionamento de validação e-mail', () => {
+         /* Dado que o usuário esta na segunda etapa de cadastro
+           Quando o usuário editar o e-mail e este for invalido
+           Então a página deve retornar critica quanto ao formato do e-mail
+        */
         cy.criarCadastroCompleto();
         cy.get('#email').clear().type('teste').pressTab();
         cy.get('.form-group').should('have.class', 'form-error')
@@ -98,6 +109,10 @@ describe('Testes de Cadastro Usuario - Automação Pratica', () => {
     })
 
     it('8. Validar tamanho campo Senha', () => {
+        /* Dado que o usuario esta na segunda etapa de cadastro
+           Quando o mesmo informar uma senha menor do que 5 digitos
+           Então a pagina deverá exigir critica visual para o campo
+        */
         cy.criarCadastroCompleto();
         cy.get('#passwd').clear().type('123').pressTab();
         cy.get('.form-group').should('have.class', 'form-error')
@@ -108,6 +123,10 @@ describe('Testes de Cadastro Usuario - Automação Pratica', () => {
     })
 
     it('9. Usuario deve ser conseguir preencher e enviar seus dados', () => {
+        /* Dado que o usuário esta realizando o seu cadastro
+           Quando informar todos os dados obrigatórios validos
+           Entao a página deve enviar seu cadastro e criar a conta
+        */
         cy.get('#email_create').type(faker.internet.email());
         cy.get('#SubmitCreate').click();
         cy.get('#customer_firstname').type(faker.name.firstName());
