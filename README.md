@@ -7,9 +7,11 @@ Desafio de testes automatizados
 
 ### Execução dos testes
 - **Os testes podem ser executados através da IDE de preferência**
+- Com interface gráfica
      ```bash
      npx cypress open
      ```
+- Sem interface gráfica
      ```bash
      npx cypress run
      ```
