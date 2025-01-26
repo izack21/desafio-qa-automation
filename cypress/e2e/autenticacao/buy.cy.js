@@ -1,10 +1,7 @@
 describe('', () => {
 
-    beforeEach(() => {
-        cy.visit('http://www.automationpractice.pl/index.php?id_product=2&controller=product#/1-size-s/8-color-white');
-    });
-
     it('1. Validar inclusão de item no Carrinho', () => {
+        cy.visitarPagina('vestidoPreto')
         cy.validarCarrinhoVazio();
         cy.adicionarCarrinho();
 
