@@ -128,3 +128,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Pastas de integração
+cypress/videos/
+cypress/screenshots/
+node_modules/
