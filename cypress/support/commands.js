@@ -24,7 +24,7 @@ Cypress.Commands.add('criarCadastroCompleto', () => {
     cy.get('#customer_lastname').type(faker.name.lastName()); // Preenche o campo Last Name
     cy.get('#passwd').type(faker.internet.password()); // Preenche o campo Password
 
-});
+}); 
 
 // Acesso à páginas especificas.
 Cypress.Commands.add('visitarPagina', (pagina) => {
