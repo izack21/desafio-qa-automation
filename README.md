@@ -1,11 +1,13 @@
 # desafio-qa-automation
-Desafio de testes automatizados
+Desafio de testes automatizados  
 • **Desafio:** Automatizar os cenários de teste criados pra o site http://www.automationpractice.pl/index.php  
 • **Framework:** Cypress  
 • **Linguagem de Programação:** javascript  
 • **IDE:** VSCode  
 
-
+### Execução dos testes
+- **Os testes podem ser executados através da IDE de preferência**
+- **Os testes podem ser executados através da integração continua no proprio GitHub**
 ### Dependências Adicionais
 
 Além do Cypress, foram utilizados os seguintes plugins para aprimorar os testes:
