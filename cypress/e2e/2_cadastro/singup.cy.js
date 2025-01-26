@@ -2,7 +2,7 @@ const {
     faker
 } = require("@faker-js/faker");
 
-describe('Testes de Cadastro Usuario - Automação Pratica', () => {
+describe('II - Testes de Cadastro Usuario', () => {
     beforeEach(() => {
         cy.visit('/');
     });
