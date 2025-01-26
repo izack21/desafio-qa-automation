@@ -2,7 +2,7 @@ const {
     realPress
 } = require("cypress-real-events/commands/realPress");
 
-describe('Testes de Login - Automação Pratica', () => {
+describe('I - Testes de Login', () => {
     beforeEach(() => {
         cy.visit('/');
     });
