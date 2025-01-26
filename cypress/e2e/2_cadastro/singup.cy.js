@@ -3,6 +3,8 @@ const {
 } = require("@faker-js/faker");
 
 describe('II - Testes de Cadastro Usuario', () => {
+
+
     beforeEach(() => {
         cy.visit('/');
     });
