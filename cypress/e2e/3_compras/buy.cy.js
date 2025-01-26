@@ -1,4 +1,4 @@
-describe('Testes de Interação com o Carrinho - Automação Pratica', () => {
+describe('III - Testes de operação do carrinho', () => {
 
     it('1. Validar inclusão de item no Carrinho', () => {
         /* Dado que o usuário recebeu o link de um produto
