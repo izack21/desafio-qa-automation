@@ -7,6 +7,12 @@ Desafio de testes automatizados
 
 ### Execução dos testes
 - **Os testes podem ser executados através da IDE de preferência**
+     ```bash
+     npx cypress open
+     ```
+     ```bash
+     npx cypress run
+     ```
 - **Os testes podem ser executados através da integração continua no proprio GitHub**
 ### Dependências Adicionais
 
