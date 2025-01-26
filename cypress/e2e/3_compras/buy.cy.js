@@ -1,4 +1,4 @@
-describe('', () => {
+describe('Testes de Interação com o Carrinho - Automação Pratica', () => {
 
     it('1. Validar inclusão de item no Carrinho', () => {
         cy.visitarPagina('vestidoPreto')
