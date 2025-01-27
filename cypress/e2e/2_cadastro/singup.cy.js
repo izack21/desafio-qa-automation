@@ -121,7 +121,7 @@ describe('II - Testes de Cadastro Usuario', () => {
         cy.get('#passwd').clear().type('12345').pressTab();
         cy.get('.form-group').should('have.class', 'form-ok');
         cy.get('#passwd').clear().type('123456').pressTab();
-        cy.get('.form-group').should('have.class', 'form-ok');
+        cy.get('.form-group').should('have.clas', 'form-ok');
     })
 
     it('9. Usuario deve ser conseguir preencher e enviar seus dados', () => {
