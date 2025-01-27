@@ -1,0 +1,42 @@
+name: Cypress Tests CI
+
+on:
+  push: 
+    branches:
+      - main 
+  pull_request: 
+    branches:
+      - main
+
+# O que será executado
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest 
+
+    steps:
+      # 1. Faz o checkout do código do repositório
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Configura a versão do Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Certifique-se de que esta versão é compatível com o seu projeto
+
+      # 3. Instala as dependências do projeto
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Configura o Cypress Cache (para melhorar o desempenho)
+      - name: Cache Cypress
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Cypress
+          key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-
+
+      # 5. Executa os testes do Cypress
+      - name: Run Cypress tests
+        run: npx cypress run
