@@ -55,7 +55,6 @@ Além do Cypress, foram utilizados os seguintes plugins para aprimorar os testes
 ---
 
 #### **2. Seção: Como Configurar**
-Explique como configurar os plugins no projeto. 
 
 ```markdown
 ### Configuração dos Plugins
